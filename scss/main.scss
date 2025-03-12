@@ -1,0 +1,83 @@
+@font-face {
+    font-family: raleway_a;
+    src: url(/fonts/raleway-black.woff2);
+}
+@font-face {
+    font-family: raleway_b;
+    src: url(/fonts/raleway-regular.woff2);
+    font-weight: 900;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --index: calc(1vw + 1vh);
+    --transition: transform .75s cubic-bezier(0.075, 0.5, 0, 1);
+}
+
+// --------------------------------------
+
+body{
+    background-color: #1b1b1b;
+    color: white;
+    font-family: raleway_b, sans-serif;
+    line-height: 1.55;
+}
+
+// Header ------------------
+header{
+    position: relative;
+}
+.layers{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.layer_header{
+    z-index: 1;
+    transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
+    will-change: transform;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: calc(var(--index)*4);
+    transition: var(--transition);
+}
+.layer_caption{
+    font-size: calc(var(--index)*2);
+}
+.layer_title{
+    font-size: calc(var(--index)*1.5);
+}
+.layer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: 100%;
+    background-position: center;
+    z-index: 2;
+    transition: var(--transition);
+}
+.layer_base{
+    background-image: url(/images/layer-base.png);
+    transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
+    z-index: 0;
+}
+.layer_middle{
+    background-image: url(/images/layer-middle.png);
+    transform: translate3d(0, calc(var(--scrollTop)/2.5), 0);
+}
+.layer_front{
+    background-image: url(/images/layer-front.png);
+    transform: translate3d(0, calc(var(--scrollTop)/5), 0);
+}
+
+// Main ------------------
+main{
+    background-image: url(/images/dungeon.jpg);
+    min-height: 100vh;
+}

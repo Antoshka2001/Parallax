@@ -63,21 +63,21 @@ header{
     transition: var(--transition);
 }
 .layer_base{
-    background-image: url(/images/layer-base.png);
+    background-image: url(../images/layer-base.png);
     transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
     z-index: 0;
 }
 .layer_middle{
-    background-image: url(/images/layer-middle.png);
+    background-image: url(../images/layer-middle.png);
     transform: translate3d(0, calc(var(--scrollTop)/2.5), 0);
 }
 .layer_front{
-    background-image: url(/images/layer-front.png);
+    background-image: url(../images/layer-front.png);
     transform: translate3d(0, calc(var(--scrollTop)/5), 0);
 }
 
 // Main ------------------
 main{
-    background-image: url(/images/dungeon.jpg);
+    background-image: url(../images/dungeon.jpg);
     min-height: 100vh;
 }
